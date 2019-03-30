@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/nytimes_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/nytimes"
+        android:paddingTop="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nytimes_logo"
+        android:id="@+id/about_1"
+        android:fontFamily="sans-serif-black"
+        android:textSize="15dp"
+        android:text="NY Times Article Search"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_1"
+        android:id="@+id/about_2"
+        android:textAlignment="center"
+        android:text="Version 1 : March 29th, 2019" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_2"
+        android:id="@+id/about_4"
+        android:fontFamily="sans-serif-black"
+        android:textSize="15dp"
+        android:textAlignment="center"
+        android:text="Developed By: Youssef Rizk" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_4"
+        android:id="@+id/about_5"
+        android:textAlignment="center"
+        android:text="This application is for searching, reading and saving articles from New York Times website." />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_5"
+        android:id="@+id/about_6"
+        android:layout_gravity="left"
+        android:text="- Enter your search query" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_6"
+        android:id="@+id/about_7"
+        android:layout_gravity="left"
+        android:text="- A list of articles will be shown that match your query" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_7"
+        android:id="@+id/about_8"
+        android:layout_gravity="left"
+        android:text="- Click on an article and the application will redirect you to NYTimes website to read it." />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_8"
+        android:id="@+id/about_9"
+        android:layout_gravity="left"
+        android:text="- Click on SAVE button to save the article into your device for later viewing." />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_9"
+        android:id="@+id/about_10"
+        android:layout_gravity="left"
+        android:text="- Click on delete to delete the article from the saved articles list." />
+</RelativeLayout>

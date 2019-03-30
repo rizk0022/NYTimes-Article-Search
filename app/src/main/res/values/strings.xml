@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">NYTimes Article Search</string>
+    <string name="title">DAILY WIT</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="action_about">About</string>
+    <string name="hint">Enter search query</string>
+    <string name="search">Search</string>
+    <string name="title_activity_article">ArticleActivity</string>
+    <string name="savedWords">View saved words</string>
+    <string name="dictionaryInfo">Info</string>
+    <string name="searchHint">Search for a word…</string>
+    <string name="saveButton">Save</string>
+    <string name="dictionaryTitle">Dictionary</string>
+    <string name="searchButton">Go</string>
+    <string name="noSavedWords">No saved words to show!</string>
+    <string name="saveWordPrompt">Would you like to save this word?</string>
+    <string name="positive">Yes</string>
+    <string name="negative">No</string>
+    <string name="savedWordsTitle">Saved Words</string>
+    <string name="dictSnackbarDismiss">Dismiss</string>
+    <string name="dictSnackbarText">Word Added!</string>
+</resources>
