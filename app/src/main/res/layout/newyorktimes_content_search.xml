@@ -7,6 +7,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".NewYorkTimes"
     tools:showIn="@layout/newyorktimes_activity_search">
+
     <ProgressBar
         android:id="@+id/progressBar"
         style="?android:attr/progressBarStyleHorizontal"
@@ -14,20 +15,33 @@
         android:layout_height="29dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:progress="60"
         android:layout_marginBottom="120dp"
-        android:visibility="invisible"
+        android:progress="60"
+        android:theme="@style/MyProgressBar"
 
-        android:theme="@style/MyProgressBar" />
-    <ListView
-        android:id="@+id/gvResults"
+        android:visibility="invisible" />
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/refresher"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:adjustViewBounds="true"
-        android:dividerHeight="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:visibility="visible">
+
+        <ListView
+            android:id="@+id/gvResults"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:dividerHeight="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
 
 </RelativeLayout>

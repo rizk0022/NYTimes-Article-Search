@@ -17,11 +17,11 @@ import java.util.List;
  * This class NewYorkTimes_ArticleArrayAdapter is the activity to load the search results of articles into Listview.
  * it will load the articles images with titles in the listview layout
  */
-public class NewYorkTimes_ArticleArrayAdapter extends ArrayAdapter<NewYorkTimes_Article> {
+public class NewYorkTimes_SavedArticleArrayAdapter extends ArrayAdapter<NewYorkTimes_Article> {
     /**
      * This is the constructor of NewYorkTimes_ArticleArrayAdapter class
      */
-    public NewYorkTimes_ArticleArrayAdapter(Context context, List<NewYorkTimes_Article> articles) {
+    public NewYorkTimes_SavedArticleArrayAdapter(Context context, List<NewYorkTimes_Article> articles) {
         super(context, android.R.layout.simple_list_item_1, articles);
     }
 
@@ -34,16 +34,19 @@ public class NewYorkTimes_ArticleArrayAdapter extends ArrayAdapter<NewYorkTimes_
         NewYorkTimes_Article article = this.getItem(position);
         if (convertView == null) {
             LayoutInflater inflater = LayoutInflater.from(getContext());
-            convertView = inflater.inflate(R.layout.newyorktimes_item_article_result, parent, false);
+            convertView = inflater.inflate(R.layout.newyorktimes_item_saved_article, parent, false);
         }
-        ImageView imageView = (ImageView) convertView.findViewById(R.id.ivImage);
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.ivImage1);
+
         imageView.setImageResource(0);
-        TextView tvTitle = (TextView) convertView.findViewById(R.id.tvTitle);
+        TextView tvTitle = (TextView) convertView.findViewById(R.id.tvTitle1);
         tvTitle.setText(article.getHeadline());
         String thumbnail = article.getThumbnail();
         if (!TextUtils.isEmpty(thumbnail)) {
             Picasso.with(getContext()).load(thumbnail).into(imageView);
         }
+
         return convertView;
+
     }
 }

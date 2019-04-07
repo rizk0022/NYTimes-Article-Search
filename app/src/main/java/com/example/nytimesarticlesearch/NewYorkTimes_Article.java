@@ -34,6 +34,7 @@ public class NewYorkTimes_Article implements Serializable {
 
     String headline;
     String thumbnail;
+
     /**
      * this method is to open the article link from nytimes website using JSONObject to get the link
      */
@@ -54,6 +55,7 @@ public class NewYorkTimes_Article implements Serializable {
             e.printStackTrace();
         }
     }
+
     /**
      * this method is to add the article to JSONArray
      */
@@ -63,7 +65,7 @@ public class NewYorkTimes_Article implements Serializable {
         for (int x = 0; x < array.length(); x++) {
             try {
                 results.add(new NewYorkTimes_Article(array.getJSONObject(x)));
-            } catch (JSONException e){
+            } catch (JSONException e) {
                 e.printStackTrace();
             }
         }

@@ -6,10 +6,18 @@
     android:layout_height="match_parent">
 
     <item
+        android:id="@+id/save_icon"
+
+        android:icon="@drawable/article_save"
+        android:orderInCategory="1"
+        android:title="save"
+        app:showAsAction="always" />
+
+    <item
         android:id="@+id/info_details"
 
-        android:icon="@drawable/ic_menu_info_details"
-        android:orderInCategory="1"
+        android:icon="@drawable/hytimes_help"
+        android:orderInCategory="2"
         android:title="Help"
         app:showAsAction="always" />
 

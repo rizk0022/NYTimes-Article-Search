@@ -9,10 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NewYorktimes_ArticleActivity"
-            android:theme="@style/AppTheme.NoActionBar"  />
-        <activity android:name=".NewYorkTimes"
-            android:theme="@style/AppTheme.NoActionBar"  />
+        <activity android:name=".NewYorkTimes_SavedArticleWebView"></activity>
+        <activity android:name=".NewYorkTimes_ArticleDetails" />
+        <activity
+            android:name=".NewYorkTimes_SavedArticles"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".NewYorkTimes_ArticleActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".NewYorkTimes"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

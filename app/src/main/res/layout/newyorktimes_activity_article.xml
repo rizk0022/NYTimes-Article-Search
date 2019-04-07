@@ -4,18 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewYorktimes_ArticleActivity">
-        <android.support.design.widget.AppBarLayout
+    tools:context=".NewYorkTimes_ArticleActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_menu"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/AppTheme.AppBarOverlay">
+            android:layout_height="wrap_content" />
+    </android.support.design.widget.AppBarLayout>
 
-                <android.support.v7.widget.Toolbar
-                    android:id="@+id/toolbar_menu"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-        </android.support.design.widget.AppBarLayout>
-
-        <include layout="@layout/newyorktimes_content_article" />
+    <include layout="@layout/newyorktimes_content_article" />
 
 </android.support.design.widget.CoordinatorLayout>

@@ -1,11 +1,13 @@
 <resources>
-    <string name="app_name">NYTimes Article Search</string>
-    <string name="title">DAILY WIT</string>
-    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="app_name">NYTimes</string>
+    <string name="title">NYTimes Article Search</string>
+    <string name="title1">CST2335 Graphical Interface Programming Final Group Project</string>
+    <string name="appbar_scrolling_view_behavior">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="action_about">About</string>
     <string name="hint">Enter search query</string>
     <string name="search">Search</string>
     <string name="title_activity_article">ArticleActivity</string>
+
     <string name="savedWords">View saved words</string>
     <string name="dictionaryInfo">Info</string>
     <string name="searchHint">Search for a word…</string>
@@ -19,4 +21,43 @@
     <string name="savedWordsTitle">Saved Words</string>
     <string name="dictSnackbarDismiss">Dismiss</string>
     <string name="dictSnackbarText">Word Added!</string>
+    <string name="wordNotFound">Word not found…</string>
+    <string name="suggestTitle">Suggestions:</string>
+    <string name="noSuggestions">No suggestions</string>
+    <string name="dInfo1">Merriam Webster Dictionary</string>
+    <string name="dInfo2">CST2335</string>
+    <string name="dInfo3">Mobile Graphical Interface Programming</string>
+    <string name="dInfo4">Author: Nick Hallarn</string>
+    <string name="dInfo5">Version 1.1 - April 1st, 2019</string>
+    <string name="dictInstructions">Instructions: \n
+        To use this application, type a word into the search bar and click go. The definition of the
+        searched word will appear in the main window. To save the word in the main window, tap the
+        save button at the bottom of the screen. To view saved words, tap on the folder icon on the
+        toolbar. This will load a list of words saved by the user. Click a word in the list to see
+        it\'s definition or remove it from the list.
+    </string>
+
+
+    <string name="article_confirm">You will be redirected to NYTimes website. OK?</string>
+    <string name="nytimes_about1" translatable="false">The New York Times Article Search</string>
+    <string name="nytimes_about2" translatable="false">Mobile Graphical Interface Programming - CST2335</string>
+    <string name="nytimes_about3">Version 1 : March 29th, 2019</string>
+    <string name="nytimes_about4">Developed By: Youssef Rizk</string>
+    <string name="nytimes_about5">This application is for searching, reading and saving articles from New York Times website.</string>
+    <string name="nytimes_about6">- Enter your search query</string>
+    <string name="nytimes_about7">- A list of articles will be shown that match your query</string>
+    <string name="nytimes_about8">- Click on an article and the application will redirect you to NYTimes website to read it.</string>
+    <string name="nytimes_about9">- Click on SAVE button to save the article into your device for later viewing.</string>
+    <string name="nytimes_about10">- Click on SAVED LIST to access your saved articles list and there press on DELETE to delete the article from the list.</string>
+    <string name="article_searching">Searching for Articles</string>
+    <string name="nytimes_welcome">Welcome to NYTimes Article Search</string>
+    <string name="article_ok">OK</string>
+    <string name="article_cancel">Cancel</string>
+    <string name="delete_button">Delete</string>
+    <string name="savedArticles">Saved List</string>
+    <string name="article_saving">Article is Saved</string>
+    <string name="delete">Delete</string>
+    <string name="newSearchButton">Search</string>
+    <string name="newsfeedsearch">Search</string>
+
 </resources>

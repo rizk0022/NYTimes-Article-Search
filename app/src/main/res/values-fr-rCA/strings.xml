@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">NYTimes</string>
+    <string name="title">Recherche d\'articles sur NYTimes</string>
+    <string name="appbar_scrolling_view_behavior">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="action_about">environ</string>
+    <string name="hint">Entrez la requête de recherche</string>
+    <string name="search">Chercher</string>
+    <string name="title_activity_article">ArticleActivité</string>
+
+
+    <string name="savedWords">Mots Sauvegardés</string>
+    <string name="dictionaryInfo">Info</string>
+    <string name="searchHint">Rechercher un mot…</string>
+    <string name="saveButton">sauvegarder</string>
+    <string name="dictionaryTitle">Dictionnaire</string>
+    <string name="searchButton">Aller</string>
+    <string name="noSavedWords">Pas de mots sauvegardés à afficher!</string>
+    <string name="saveWordPrompt">Voulez-vous sauvegarder ce mot?</string>
+    <string name="positive">Oui</string>
+    <string name="negative">Non</string>
+    <string name="savedWordsTitle">Mots Sauvegardés</string>
+    <string name="dictSnackbarDismiss">Rejeter</string>
+    <string name="dictSnackbarText">Mot ajouté</string>
+    <string name="wordNotFound">Mot non trouvé…</string>
+    <string name="suggestTitle">Suggestions:</string>
+    <string name="noSuggestions">Pas de suggestions</string>
+    <string name="dInfo1">Dictionnaire Webster Merriam</string>
+    <string name="dInfo2">CST2335</string>
+    <string name="dInfo3">Programmation d\'interface graphique mobile</string>
+    <string name="dInfo4">Auteur: Nick Hallarn</string>
+    <string name="dInfo5">Version 1.1 - April 1st, 2019</string>
+    <string name="dictInstructions">Instructions: \n
+        Pour utiliser cette application, tapez un mot dans la barre de recherche et cliquez sur OK.
+        La définition de la le mot recherché apparaîtra dans la fenêtre principale. Pour enregistrer
+        le mot dans la fenêtre principale, tapez sur le bouton de sauvegarde en bas de l\'écran.
+        Pour voir les mots sauvegardés, tapez sur l\’icône du dossier sur le barre d\'outils.
+        Cela chargera une liste de mots sauvegardés par l\'utilisateur. Cliquez sur un mot dans la
+        liste pour voir c\'est la définition ou le supprimer de la liste.
+    </string>
+
+
+    <string name="article_confirm">Vous serez redirigé vers le site Web de NYTimes. D\'accord?</string>
+    <string name="nytimes_about3">Version 1: 29 mars 2019</string>
+    <string name="nytimes_about4">Développé par: Youssef Rizk</string>
+    <string name="nytimes_about5">Cette application est destinée à la recherche, à la lecture et à la sauvegarde d’articles du site Web du New York Times.</string>
+    <string name="nytimes_about6">"- Entrez votre recherche "</string>
+    <string name="nytimes_about7">"- Une liste d'articles correspondant à votre requête s'affichera "</string>
+    <string name="nytimes_about8">"- Cliquez sur un article et l'application vous redirigera vers le site Web de NYTimes pour le lire. "</string>
+    <string name="nytimes_about9">"- Cliquez sur le bouton ENREGISTRER pour enregistrer l'article sur votre appareil pour le visionner plus tard. "</string>
+    <string name="nytimes_about10">- Cliquez sur SAUVEGARDE pour accéder à votre liste d\'articles sauvegardés, puis appuyez sur SUPPRIMER pour supprimer l\'article de la liste.</string>
+    <string name="nytimes_welcome">Bienvenue sur NYTimes Article Search</string>
+    <string name="article_ok">D\'accord</string>
+    <string name="article_cancel">Annuler</string>
+    <string name="article_searching">Recherche d\'articles</string>
+    <string name="delete_button">Effacer</string>
+    <string name="savedArticles">Liste sauvegardée</string>
+    <string name="article_saving">L\'article est enregistré</string>
+    <string name="title1">CST2335 Graphical Interface Programming Projet de groupe final</string>
+    <string name="delete">Effacer</string>
+    <string name="newSearchButton">Chercher</string>
+    <string name="newsfeedsearch">Chercher</string>
+</resources>
