@@ -15,7 +15,7 @@
             android:name=".NewYorkTimes_SavedArticles"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".NewYorkTimes_ArticleActivity"
+            android:name=".NewYorktimes_ArticleActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".NewYorkTimes"

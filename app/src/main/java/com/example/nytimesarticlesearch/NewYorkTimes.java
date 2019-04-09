@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -59,7 +61,7 @@ public class NewYorkTimes extends AppCompatActivity {
      * url variable is static finalString variable of nytimes.com website for article search
      * API_KEY variable is static final String variable of the API KEY belong to me.
      * sb variable is the Snackbar variable that display a Welcome snackbar message upon lunching the application
-     * intent is an Intent variable to load NewYorkTimes_ArticleActivity activity when an article title clicked.
+     * intent is an Intent variable to load NewYorktimes_ArticleActivity activity when an article title clicked.
      * article variable is NewYorkTimes_Article object that will be used when an article title clicked to load the article
      */
     ProgressBar progressBar;
@@ -72,12 +74,15 @@ public class NewYorkTimes extends AppCompatActivity {
     private static final String API_KEY = "nGhORsp4W6LhNZnA1DtcYdeVv2Kp0l8r";
     Snackbar sb;
     Intent intent;
-    NewYorkTimes_Article article;
     SharedPreferences sp;
     Intent saved_List_Intent;
     AsyncHttpClient client;
     String query;
     RequestParams params;
+    NewYorkTimes_MyDatabaseOpenHelper dbOpener;
+    public static SQLiteDatabase db;
+    NewYorkTimes_Article article;
+
 
     /**
      * This method initializes the NewYorkTimes activity.
@@ -87,6 +92,27 @@ public class NewYorkTimes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.newyorktimes_activity_search);
+
+        //get a database:
+        dbOpener = new NewYorkTimes_MyDatabaseOpenHelper(this);
+        db = dbOpener.getWritableDatabase();
+        //query all the results from the database:
+        String[] columns = {NewYorkTimes_MyDatabaseOpenHelper.COL_ID, NewYorkTimes_MyDatabaseOpenHelper.COL_HEADER, NewYorkTimes_MyDatabaseOpenHelper.COL_URL, NewYorkTimes_MyDatabaseOpenHelper.COL_PIC_URL};
+        Cursor results_saved = db.query(false, NewYorkTimes_MyDatabaseOpenHelper.TABLE_NAME, columns, null, null, null, null, null, null);
+
+        while(results_saved.moveToNext())
+        {
+            int headerindex = results_saved.getColumnIndex(NewYorkTimes_MyDatabaseOpenHelper.COL_HEADER);
+            String header = results_saved.getString(headerindex);
+            int urlindex = results_saved.getColumnIndex(NewYorkTimes_MyDatabaseOpenHelper.COL_URL);
+            String url = results_saved.getString(urlindex);
+            int urlpictureindex = results_saved.getColumnIndex(NewYorkTimes_MyDatabaseOpenHelper.COL_PIC_URL);
+            String urlpicture = results_saved.getString(urlpictureindex);
+            //add the new Contact to the array list:
+            article = new NewYorkTimes_Article(  url,header, urlpicture );
+            NewYorktimes_ArticleActivity.saved_Articles.add(article);
+        }
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_search_activity);
         etQuery = (EditText) findViewById(R.id.etQuery);
         saved_list = (Button) findViewById(R.id.savedArticles);
@@ -94,6 +120,7 @@ public class NewYorkTimes extends AppCompatActivity {
         sp = getSharedPreferences("searchQuery", Context.MODE_PRIVATE);
         String searchText = sp.getString("searchQuery", "");
         etQuery.setText(searchText);
+
         progressBar = findViewById(R.id.progressBar);
         articles = new ArrayList<>();
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
@@ -106,7 +133,7 @@ public class NewYorkTimes extends AppCompatActivity {
         gvResults.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                intent = new Intent(getApplicationContext(), NewYorkTimes_ArticleActivity.class);
+                intent = new Intent(getApplicationContext(), NewYorktimes_ArticleActivity.class);
                 article = articles.get(position);
                 alertDialog();
             }
@@ -122,7 +149,6 @@ public class NewYorkTimes extends AppCompatActivity {
 
         saved_list.setOnClickListener(btn -> {
             startActivity(saved_List_Intent);
-
         });
     }
 

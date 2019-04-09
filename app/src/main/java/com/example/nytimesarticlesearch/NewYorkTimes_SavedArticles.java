@@ -2,11 +2,13 @@ package com.example.nytimesarticlesearch;
 
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
 
 /**
  * This class NewYorkTimes_SavedArticles is the activity to load the saved articles into Listview.
@@ -21,6 +23,9 @@ public class NewYorkTimes_SavedArticles extends AppCompatActivity {
     protected boolean isTablet;
     ListView list1;
     NewYorkTimes_ArticleFragment messageFragment;
+    NewYorkTimes_MyDatabaseOpenHelper dbOpener;
+    public static SQLiteDatabase db;
+    NewYorkTimes_Article article;
 
     /**
      * This initiate the fields and implement the setOnItemClickListener when the article is clicked it open a fragment
@@ -31,16 +36,20 @@ public class NewYorkTimes_SavedArticles extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.newyorktimes_saved_articles);
         list1 = (ListView) findViewById(R.id.list1);
-        list1.setAdapter(NewYorkTimes_ArticleActivity.saved_Adapter);
+
+        NewYorktimes_ArticleActivity.createAdapter(NewYorkTimes_SavedArticles.this);
+        list1.setAdapter(NewYorktimes_ArticleActivity.saved_Adapter);
+        dbOpener = new NewYorkTimes_MyDatabaseOpenHelper(this);
+        db = dbOpener.getWritableDatabase();
         isTablet = (findViewById(R.id.fragmentLocation) != null);
         list1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Bundle newBundle = new Bundle();
-                newBundle.putString("headline", NewYorkTimes_ArticleActivity.saved_Adapter.getItem(position).getHeadline());
-                newBundle.putString("url", NewYorkTimes_ArticleActivity.saved_Adapter.getItem(position).getWebUrl());
-                newBundle.putString("pic_url", NewYorkTimes_ArticleActivity.saved_Adapter.getItem(position).getThumbnail());
-                newBundle.putInt("id", NewYorkTimes_ArticleActivity.saved_Adapter.getPosition(NewYorkTimes_ArticleActivity.saved_Adapter.getItem(position)));
+                newBundle.putString("headline", NewYorktimes_ArticleActivity.saved_Adapter.getItem(position).getHeadline());
+                newBundle.putString("url", NewYorktimes_ArticleActivity.saved_Adapter.getItem(position).getWebUrl());
+                newBundle.putString("pic_url", NewYorktimes_ArticleActivity.saved_Adapter.getItem(position).getThumbnail());
+                newBundle.putInt("id", NewYorktimes_ArticleActivity.saved_Adapter.getPosition(NewYorktimes_ArticleActivity.saved_Adapter.getItem(position)));
 
                 if (isTablet) {
                     messageFragment = new NewYorkTimes_ArticleFragment(NewYorkTimes_SavedArticles.this);
@@ -62,11 +71,11 @@ public class NewYorkTimes_SavedArticles extends AppCompatActivity {
      * This method is called when deleting an article from the saved list's fragment
      */
     public void deleteItem(int id) {
-        NewYorkTimes_ArticleActivity.db.delete(NewYorkTimes_MyDatabaseOpenHelper.TABLE_NAME, NewYorkTimes_MyDatabaseOpenHelper.COL_ID + "=" + id, null);
-        NewYorkTimes_Article position = NewYorkTimes_ArticleActivity.saved_Adapter.getItem(id);
-        NewYorkTimes_ArticleActivity.saved_Articles.remove(position);
+        db.delete(NewYorkTimes_MyDatabaseOpenHelper.TABLE_NAME, NewYorkTimes_MyDatabaseOpenHelper.COL_ID + "=" + id, null);
+        NewYorkTimes_Article position = NewYorktimes_ArticleActivity.saved_Adapter.getItem(id);
+        NewYorktimes_ArticleActivity.saved_Articles.remove(position);
 
-        NewYorkTimes_ArticleActivity.saved_Adapter.notifyDataSetChanged();
+        NewYorktimes_ArticleActivity.saved_Adapter.notifyDataSetChanged();
     }
 
     /**

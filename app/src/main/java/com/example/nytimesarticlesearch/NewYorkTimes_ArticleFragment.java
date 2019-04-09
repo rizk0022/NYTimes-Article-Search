@@ -69,7 +69,9 @@ public class NewYorkTimes_ArticleFragment extends Fragment {
         urlText = "URL: " + " " + args.getString("url");
         articleID = args.getInt("id");
         String thumbnail = args.getString("pic_url");
-        Picasso.with(getContext()).load(thumbnail).into(image_article);
+        if (thumbnail.length()>0) {
+            Picasso.with(getContext()).load(thumbnail).into(image_article);
+        }
         title_article.setText(titleText);
         url_article.setText(urlText);
         urlTextToLoad = args.getString("url");

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".NewYorkTimes_ArticleActivity"
+    tools:context=".NewYorktimes_ArticleActivity"
     tools:showIn="@layout/newyorktimes_activity_article">
 
     <WebView

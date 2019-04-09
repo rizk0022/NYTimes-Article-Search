@@ -1,6 +1,7 @@
 package com.example.nytimesarticlesearch;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -19,10 +20,10 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 /**
- * The NewYorkTimes_ArticleActivity class is the activity opening NYTimes website link to read the article.
+ * The NewYorktimes_ArticleActivity class is the activity opening NYTimes website link to read the article.
  * This class extends AppCompatActivity.
  */
-class NewYorkTimes_ArticleActivity extends AppCompatActivity {
+public class NewYorktimes_ArticleActivity extends AppCompatActivity {
     /**
      * dbOpener variable is an instance of NewYorkTimes_MyDatabaseOpenHelper to access the database
      * db is an instance of SQLiteDatabase to execute the database
@@ -58,16 +59,19 @@ class NewYorkTimes_ArticleActivity extends AppCompatActivity {
      * This method initializes class fields and getting the URL string from NewYorkTimes_Article class.
      * setWebViewClient is used to open the link.
      */
+    public static void createAdapter(Context cnt) {
+        saved_Adapter = new NewYorkTimes_SavedArticleArrayAdapter(cnt, saved_Articles);
 
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.newyorktimes_activity_article);
-        toolbar = (Toolbar) findViewById(R.id.toolbar_menu);
+        toolbar = findViewById(R.id.toolbar_menu);
         setSupportActionBar(toolbar);
         saved_Adapter = new NewYorkTimes_SavedArticleArrayAdapter(this, saved_Articles);
         article = (NewYorkTimes_Article) getIntent().getSerializableExtra("article");
-        webView = (WebView) findViewById(R.id.wvArticle);
+        webView = findViewById(R.id.wvArticle);
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {

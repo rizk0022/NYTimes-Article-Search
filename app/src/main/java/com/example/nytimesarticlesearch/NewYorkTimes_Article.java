@@ -20,6 +20,12 @@ public class NewYorkTimes_Article implements Serializable {
     String webUrl;
     public static String id = "article";
 
+    public NewYorkTimes_Article(String webUrl, String headline, String thumbnail) {
+        this.webUrl = webUrl;
+        this.headline = headline;
+        this.thumbnail = thumbnail;
+    }
+
     public String getWebUrl() {
         return webUrl;
     }
